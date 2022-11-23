@@ -15,4 +15,16 @@ function changeBackground ()
     bdy.classList.add("pink");
 }
 
-clickMeButton.addEventListener("click", changeBackground, {once:true});
+clickMeButton.addEventListener("click", changeBackground);
+
+function changeText ()
+{
+    if (clickMeButton.textContent === "Click Me!") {
+        clickMeButton.textContent = "Clicked!";
+    }
+    else {
+        clickMeButton.textContent = "Click Me!";
+    }
+}
+
+clickMeButton.addEventListener("click", changeText);
