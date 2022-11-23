@@ -1,6 +1,7 @@
 const clickMeButton = document.querySelector(".click-me");
 // console.log(clickMeButton);
 const bdy = document.body;
+const img = document.querySelector("#shoppingCart");
 
 function clickHandler ()
 {
@@ -28,3 +29,13 @@ function changeText ()
 }
 
 clickMeButton.addEventListener("click", changeText);
+
+function updateImage ()
+{
+    img.src = "images/shoppingCart.png";
+    img.alt = "Shopping Cart";
+    img.width = 100;
+    img.height = 100;
+}
+
+clickMeButton.addEventListener("click", updateImage);
