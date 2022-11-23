@@ -2,6 +2,7 @@ const clickMeButton = document.querySelector(".click-me");
 // console.log(clickMeButton);
 const bdy = document.body;
 const img = document.querySelector("#shoppingCart");
+const buttonContainer = document.querySelector(".button-container");
 
 function clickHandler ()
 {
@@ -30,12 +31,31 @@ function changeText ()
 
 clickMeButton.addEventListener("click", changeText);
 
-function updateImage ()
+function updateImage (ev)
 {
     img.src = "images/shoppingCart.png";
-    img.alt = "Shopping Cart";
+    img.alt = "Shopping Cart Icon";
     img.width = 100;
     img.height = 100;
+    console.log(ev);
 }
 
 clickMeButton.addEventListener("click", updateImage);
+
+function changeBGGreen (ev)
+{
+    if (ev.target.tagName === "BUTTON") {
+        ev.target.classList.add("green");
+    }
+}
+
+buttonContainer.addEventListener("mouseover", changeBGGreen);
+
+function changeTextColor (ev)
+{
+    if (ev.target.tagName === "BUTTON") {
+        ev.target.classList.add(`${ev.target.textContent}`);
+    }
+}
+
+buttonContainer.addEventListener("click", changeTextColor);
